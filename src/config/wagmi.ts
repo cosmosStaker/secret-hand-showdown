@@ -1,12 +1,11 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { sepolia } from 'wagmi/chains';
 import { QueryClient } from '@tanstack/react-query';
-import { tempConfig } from './temp-env';
 
-// Use temporary config for testing (replace with environment variables in production)
-const projectId = tempConfig.walletConnectProjectId;
-const rpcUrl = tempConfig.rpcUrl;
-const chainId = tempConfig.chainId;
+// Use environment variables with fallbacks
+const projectId = import.meta.env.VITE_NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || 'YOUR_WALLET_CONNECT_PROJECT_ID';
+const rpcUrl = import.meta.env.VITE_NEXT_PUBLIC_RPC_URL || 'https://sepolia.infura.io/v3/YOUR_INFURA_API_KEY';
+const chainId = Number(import.meta.env.VITE_NEXT_PUBLIC_CHAIN_ID || '11155111');
 
 const chains = [
   {
