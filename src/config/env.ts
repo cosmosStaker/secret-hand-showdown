@@ -2,13 +2,13 @@
 export const config = {
   // Chain Configuration
   chainId: 11155111, // Sepolia testnet
-  rpcUrl: process.env.NEXT_PUBLIC_RPC_URL || "https://sepolia.infura.io/v3/YOUR_INFURA_API_KEY",
+  rpcUrl: import.meta.env.VITE_NEXT_PUBLIC_RPC_URL || "https://sepolia.infura.io/v3/YOUR_INFURA_API_KEY",
   
   // Wallet Connect Configuration
-  walletConnectProjectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || "YOUR_WALLET_CONNECT_PROJECT_ID",
+  walletConnectProjectId: import.meta.env.VITE_NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || "YOUR_WALLET_CONNECT_PROJECT_ID",
   
   // Infura Configuration
-  infuraApiKey: process.env.NEXT_PUBLIC_INFURA_API_KEY || "YOUR_INFURA_API_KEY",
+  infuraApiKey: import.meta.env.VITE_NEXT_PUBLIC_INFURA_API_KEY || "YOUR_INFURA_API_KEY",
   alternativeRpcUrl: "https://1rpc.io/sepolia",
   
   // Contract addresses (to be deployed)
